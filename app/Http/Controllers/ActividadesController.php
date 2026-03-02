@@ -39,7 +39,7 @@ class ActividadesController extends Controller
 
    
     // Crear el registro en la base de datos
-    IngresoActividades::create($data);
+    IngresosActividades::create($data);
 
     // Redirigir con mensaje de éxito
     return redirect()
