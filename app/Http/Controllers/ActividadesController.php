@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\ActividadesSocios;
 use App\Models\Actividades;
+use App\Models\IngresosActividades;
 use App\Models\Socios;
 use Illuminate\Http\Request;
 
