@@ -40,7 +40,7 @@ class ActividadesController extends Controller
 
    
     // Crear el registro en la base de datos
-    IngresosActividades::create($data);
+    Actividades::create($data);
 
     // Redirigir con mensaje de éxito
     return redirect()
@@ -48,7 +48,7 @@ class ActividadesController extends Controller
         ->with([
             'status'  => 'success',
             'color'   => 'green',
-            'message' => 'Movimiento registrado correctamente'
+            'message' => 'Se registro la actividad'
         ]);
 
 
