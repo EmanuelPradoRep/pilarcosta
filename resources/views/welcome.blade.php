@@ -42,9 +42,10 @@
     <div class="relative overflow-hidden rounded-xl shadow-lg">
       <!-- Slides -->
         <div id="carouselSlides" class="flex transition-transform duration-700 w-full">
-          <img src="/img/natacion.jpg" class="w-full flex-shrink-0 h-80 object-cover" alt="slide 1">
-          <img src="/img/futbol.jpg" class="w-full flex-shrink-0 h-80 object-cover" alt="slide 2">
-          <img src="/img/cantina.jpg" class="w-full flex-shrink-0 h-80 object-cover" alt="slide 3">
+         <img src="/img/captura.jpg" class="w-full h-auto flex-shrink-0 object-contain" alt="slide 1">
+
+
+         
          </div>
 
 
@@ -129,18 +130,18 @@
 
       <div class="grid md:grid-cols-3 gap-8">
         <div tabindex="0" class="p-6 border rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-          <h3 class="text-xl font-semibold mb-3">Fútbol</h3>
-          <p class="text-gray-600">Entrenamientos para todas las edades.</p>
+          <h3 class="text-xl font-semibold mb-3">Cerámica</h3>
+          <p class="text-gray-600">Para todas las edades.</p>
         </div>
 
          <div tabindex="0" class="p-6 border rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-          <h3 class="text-xl font-semibold mb-3">Natación</h3>
-          <p class="text-gray-600">Clases para niños, adultos y adultos mayores.</p>
+          <h3 class="text-xl font-semibold mb-3">Yoga para niños</h3>
+          <p class="text-gray-600">Clases para niños.</p>
         </div>
 
         <div tabindex="0" class="p-6 border rounded-xl shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-          <h3 class="text-xl font-semibold mb-3">Gimnasio</h3>
-          <p class="text-gray-600">Rutinas guiadas por instructores certificados.</p>
+          <h3 class="text-xl font-semibold mb-3">Taller de escritura</h3>
+          <p class="text-gray-600">Todas las edades.</p>
         </div>
       </div>
     </div>
