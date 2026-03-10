@@ -42,7 +42,7 @@
     <div class="relative overflow-hidden rounded-xl shadow-lg">
       <!-- Slides -->
         <div id="carouselSlides" class="flex transition-transform duration-700 w-full">
-         <img src="{{ asset('img/captura.jpg') }}" alt="slide 1">
+         <img src="{{ asset('img/Captura.jpg') }}" alt="slide 1">
 
 
          
