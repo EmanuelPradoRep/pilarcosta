@@ -1,23 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Actividades;
-use App\Models\Socios;
 use App\Models\ActividadesSocios;
-use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
 
-class ActividadesSociosController extends Controller
+class ActividadAlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $actividadPersona = ActividadesSocios::paginate(10);
-        return view('ActividadesSocios.index', compact('actividadPersona'));
+       
+    $actividadesalumnos = ActividadesSocios::paginate(10);
+    return view('actividadesalumno.index', compact('actividadesalumnos'));
+
+
     }
+
     /**
      * Show the form for creating a new resource.
      */

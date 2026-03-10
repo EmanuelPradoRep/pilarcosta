@@ -8,6 +8,14 @@ use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\SociosController;
 use App\Http\Controllers\IngresosClubController;
 use App\Http\Controllers\ActividadesSociosController;
+use App\Http\Controllers\AlumnosController;
+use App\Http\Controllers\DocentesController;
+use App\Http\Controllers\ActividadDocenteController;
+use App\Http\Controllers\ActividadAlumnoController;
+
+
+
+
 
 
 /*Peticiones sin loguearse*/
@@ -39,6 +47,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('/socios', SociosController::class);
     Route::resource('/actividades', ActividadesController::class);
     Route::resource('/ingresos', IngresosClubController::class);
+    Route::resource('/alumnos', AlumnosController::class);
+    Route::resource('/docentes', DocentesController::class);
+    Route::resource('/actividadesdocente', ActividadDocenteController::class);
+    Route::resource('/actividadesalumno', ActividadAlumnoController::class);
+
    
 
 });

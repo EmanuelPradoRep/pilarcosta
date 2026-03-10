@@ -17,12 +17,12 @@ return new class extends Migration
             $table->integer('numero_socio')->unique();
             $table->string('documento')->unique();
             $table->string('sexo')->nullable();
-            $table->string('nombre');  
-            $table->string('apellido'); 
+            $table->string('nombre')->nullable();
+            $table->string('apellido')->nullable();
             $table->string('telefono')->nullable();
-            $table->string('direccion'); 
-            $table->date('fecha_ingreso'); 
-            $table->dateTime('fecha_nacimiento'); 
+            $table->string('direccion')->nullable();
+            $table->date('fecha_ingreso')->nullable();
+            $table->dateTime('fecha_nacimiento')->nullable();
             $table->boolean('activo')->default(false);
             $table->text('observaciones')->nullable();
             $table->timestamps();

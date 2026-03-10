@@ -322,12 +322,29 @@ return [
         ],
        
         ['header' => 'account_settings'],
+
+           [
+            'text' => 'Personas',
+            'icon' => 'fas fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Docentes',
+                    'url' => '/docentes',
+                ],
+                
+                [
+                    'text' => 'Alumnos',
+                    'url' => '/alumnos',
+                ],
+            ],
+        ],
+
         
 
         [
             'text' => 'Socios',
             'url' => '/socios',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-handshake',
         ],
 
         [
@@ -343,6 +360,16 @@ return [
                 [
                     'text' => 'Agregar Actividad',
                     'url' => '/actividades/create',
+                ],
+
+                 [
+                    'text' => 'Actividad del docente',
+                    'url' => '/actividadesdocente',
+                ],
+
+                [
+                    'text' => 'Actividad del alumno',
+                    'url' => '/actividadesalumno',
                 ],
        ] 
        ],

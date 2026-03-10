@@ -17,7 +17,7 @@ class ActividadesSocios extends Model
  
     protected $fillable = [
         'actividad_id',
-        'socio_id',
+        'persona_id',
     ];
 
     // Relaciones
@@ -26,9 +26,9 @@ class ActividadesSocios extends Model
         return $this->belongsTo(Actividades::class, 'actividad_id');
     }
 
-     public function socio()
+     public function persona()
     {
-        return $this->belongsTo(Socios::class, 'socio_id');
+        return $this->belongsTo(Alumnos::class, 'persona_id');
     }
 
 

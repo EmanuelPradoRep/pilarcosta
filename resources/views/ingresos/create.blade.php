@@ -16,17 +16,20 @@
     <form action="{{ route('ingresos.store') }}" method="POST" class="space-y-6">
         @csrf
 
-        {{-- Actividad --}}
+       {{-- Actividad --}}
         <div class="max-w-md">
             <label class="block text-sm font-medium text-gray-700">Actividad</label>
             <select name="actividad_id"
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                 required>
+                <option value="">- Seleccione una actividad -</option>
                 @foreach($actividades as $actividad)
                     <option value="{{ $actividad->id }}">{{ $actividad->nombre }}</option>
                 @endforeach
             </select>
         </div>
+
+
 
         {{-- Tipo --}}
         <div>

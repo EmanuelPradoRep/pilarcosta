@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('actividad_id');
-            $table->unsignedBigInteger('socio_id');
+            $table->unsignedBigInteger('persona_id');
 
             $table->timestamps();
 
@@ -27,9 +27,9 @@ return new class extends Migration
                 ->onUpdate('cascade');
 
         
-            $table->foreign('socio_id')
+            $table->foreign('persona_id')
                 ->references('id')
-                ->on('socios')
+                ->on('alumnos')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
