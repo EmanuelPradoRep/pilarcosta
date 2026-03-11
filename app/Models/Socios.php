@@ -31,6 +31,7 @@ class Socios extends Model
         'fecha_nacimiento',
         'activo',
         'observaciones',
+        'usuario',
     ];
 
    

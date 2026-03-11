@@ -19,6 +19,7 @@ class MovimientosContables extends Model
         'monto',
         'fecha',
         'observaciones',
+        'usuario',
     ];
         
 }

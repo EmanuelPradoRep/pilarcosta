@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('cupo_maximo')->nullable();
             $table->integer('duracion_minutos')->nullable();
             $table->decimal('costo', 8, 2)->nullable();
-            $table->string('usuario');
+            $table->string('usuario')->nullable();
             $table->boolean('activo')->default(false);
             $table->timestamps();
 

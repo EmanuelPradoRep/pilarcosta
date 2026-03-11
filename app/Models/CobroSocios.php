@@ -14,6 +14,7 @@ class CobroSocios extends Model
         'monto',
         'fecha',
         'observaciones',
+        'usuario',
     ];
 
     // Relación con Socio

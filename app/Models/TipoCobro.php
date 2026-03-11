@@ -12,5 +12,6 @@ class TipoCobro extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
+        'usuario',
     ];
 }

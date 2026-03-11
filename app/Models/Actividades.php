@@ -24,6 +24,7 @@ class Actividades extends Model
         'costo',
         'usuario',
         'activo',
+        
     ];
 
     // Casts para convertir automáticamente tipos de datos

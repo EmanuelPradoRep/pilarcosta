@@ -326,17 +326,7 @@ return [
            [
             'text' => 'Personas',
             'icon' => 'fas fa-users',
-            'submenu' => [
-                [
-                    'text' => 'Docentes',
-                    'url' => '/docentes',
-                ],
-                
-                [
-                    'text' => 'Alumnos',
-                    'url' => '/alumnos',
-                ],
-            ],
+           
         ],
 
         
