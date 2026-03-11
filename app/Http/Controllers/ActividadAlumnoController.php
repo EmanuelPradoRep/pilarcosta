@@ -23,7 +23,7 @@ class ActividadAlumnoController extends Controller
 
     public function adminIndex()
     {
-        $actividades = ActividadAlumno::paginate(20); // todos los alumnos
+       $actividades = ActividadAlumno::paginate(20); // todos los alumnos
        return view('actividades.panel.index', compact('actividades'));
 
     }
