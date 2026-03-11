@@ -21,6 +21,7 @@ return new class extends Migration
             $table->boolean('activo')->default(true);
             $table->date('fecha_ingreso')->nullable();
             $table->text('observaciones')->nullable();
+            $table->string('usuario');
             $table->timestamps();
 
 

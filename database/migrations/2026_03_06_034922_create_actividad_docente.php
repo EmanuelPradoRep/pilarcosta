@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('actividad_id');
             $table->unsignedBigInteger('docente_id');
             $table->string('rol')->nullable();
+            $table->string('usuario');
             $table->timestamps();
 
             $table->foreign('actividad_id')

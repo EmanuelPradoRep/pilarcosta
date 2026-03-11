@@ -16,6 +16,8 @@ return new class extends Migration
 
             $table->unsignedBigInteger('actividad_id');
             $table->unsignedBigInteger('persona_id');
+            $table->unsignedBigInteger('socio_id');
+            $table->string('usuario');
 
             $table->timestamps();
 
@@ -32,6 +34,14 @@ return new class extends Migration
                 ->on('alumnos')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+
+             $table->foreign('socio_id')
+                ->references('id')
+                ->on('socios')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+
         });
     }
 
