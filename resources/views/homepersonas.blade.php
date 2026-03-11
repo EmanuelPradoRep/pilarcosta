@@ -1,4 +1,5 @@
 
+
 <x-app-layout>
 
     @vite(['resources/css/app.css'])
@@ -16,14 +17,15 @@
                 <span class="text-green-600">✔</span> Tus actividades
             </h3>
 
-            @forelse($actividades as $actividadSocio)
+            @forelse($actividades as $actividadAlumno)
                 <div class="flex justify-between items-center p-4 mb-3 border rounded-lg hover:bg-gray-50 transition">
                     <div>
                         <p class="font-medium text-gray-800">
-                            {{ $actividadSocio->actividad->nombre }}
+                            {{ $actividadAlumno->actividad->nombre }}
                         </p>
+
                         <p class="text-sm text-gray-500">
-                            Socio: {{ $actividadSocio->socio->user->name }}
+                            {{-- horario o datos extra si querés --}}
                         </p>
                     </div>
 
@@ -34,6 +36,11 @@
             @empty
                 <p class="text-sm text-gray-500">No estás inscripto en ninguna actividad.</p>
             @endforelse
+
+            <div class="mt-4">
+                {{ $actividades->links() }}
+            </div>
+
         </div>
 
         <!-- Actividades disponibles -->
@@ -55,6 +62,7 @@
                     Agendarme
                 </button>
             </div>
+
         </div>
 
     </div>

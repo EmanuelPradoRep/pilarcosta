@@ -12,22 +12,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('actividad_docente', function (Blueprint $table) {
+            
             $table->id();
+            $table->unsignedBigInteger('persona_id');
             $table->unsignedBigInteger('actividad_id');
-            $table->unsignedBigInteger('docente_id');
-            $table->string('rol')->nullable();
-            $table->string('usuario');
+            $table->string('usuario')->nullable();
             $table->timestamps();
 
-            $table->foreign('actividad_id')
-            ->references('id')
-            ->on('actividades')
-            ->onDelete('cascade');
+             $table->foreign('persona_id')
+                ->references('id')
+                ->on('personas')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
-            $table->foreign('docente_id')
-            ->references('id')
-            ->on('docentes')
-            ->onDelete('cascade');
+        
+            $table->foreign('actividad_id')
+                ->references('id')
+                ->on('actividades')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
 
 
         });

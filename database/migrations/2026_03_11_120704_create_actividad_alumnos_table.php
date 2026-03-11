@@ -11,37 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('actividad_socios', function (Blueprint $table) {
+        Schema::create('actividad_alumnos', function (Blueprint $table) {
+
             $table->id();
-
-            $table->unsignedBigInteger('actividad_id');
             $table->unsignedBigInteger('persona_id');
-            $table->unsignedBigInteger('socio_id');
-            $table->string('usuario');
-
+            $table->unsignedBigInteger('actividad_id');
+            $table->string('usuario')->nullable();
             $table->timestamps();
 
-     
+             $table->foreign('persona_id')
+                ->references('id')
+                ->on('personas')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+
+        
             $table->foreign('actividad_id')
                 ->references('id')
                 ->on('actividades')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
-        
-            $table->foreign('persona_id')
-                ->references('id')
-                ->on('alumnos')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-             $table->foreign('socio_id')
-                ->references('id')
-                ->on('socios')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-
-
+             
         });
     }
 
@@ -50,6 +40,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('actividad_socios');
+        Schema::dropIfExists('actividad_alumnos');
     }
 };

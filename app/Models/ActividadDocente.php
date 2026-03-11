@@ -10,9 +10,10 @@ class ActividadDocente extends Model
     protected $table = 'actividad_docente';
 
     protected $fillable = [
+        'persona_id',
         'actividad_id',
-        'docente_id',
-        'rol',
+        'usuario',
+          
     ];
 
     /**
@@ -23,11 +24,5 @@ class ActividadDocente extends Model
         return $this->belongsTo(Actividades::class, 'actividad_id');
     }
 
-    /**
-     * Relación con Docente
-     */
-    public function docente()
-    {
-        return $this->belongsTo(Docentes::class, 'docente_id');
-    }
+  
 }

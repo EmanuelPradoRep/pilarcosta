@@ -1,22 +1,33 @@
 <?php
 
+
 namespace App\Http\Controllers;
-use App\Models\ActividadesSocios;
+use App\Models\ActividadAlumno;
+use App\Models\Personas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActividadAlumnoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-       
-    $actividadesalumnos = ActividadesSocios::paginate(10);
-    return view('actividadesalumno.index', compact('actividadesalumnos'));
+  
+  
 
+   public function index()
+    {
+        $usuarioId = Auth::id();
+        $actividades = ActividadAlumno::where('persona_id', $usuarioId)->paginate(10);
+
+        return view('homepersonas', compact('actividades'));
+    }
+
+
+    public function adminIndex()
+    {
+        $actividades = ActividadAlumno::paginate(20); // todos los alumnos
+       return view('actividades.panel.index', compact('actividades'));
 
     }
+
 
     /**
      * Show the form for creating a new resource.

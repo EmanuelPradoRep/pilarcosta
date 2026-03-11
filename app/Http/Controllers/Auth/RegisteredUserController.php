@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
-use App\Models\Socios;
+use App\Models\Personas;
 
 class RegisteredUserController extends Controller
 {
@@ -42,13 +42,13 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-         Socios::create([
-        'usuario_id' => $user->id,
-        'numero_socio' => rand(1000,9999),
-        'documento' => rand(1000,9999),
-        'nombre' => $request->name,
-        'fecha_ingreso' => now(),
-        'activo' => true,
+       // Crear la persona asociada
+        Personas::create([
+            'usuario_id'   => $user->id,
+            'nombre'       => $request->name,
+            'documento'    => rand(1000,9999),
+            'fecha_ingreso'=> now(),
+            'activo'       => true,
         ]);
 
 
@@ -57,6 +57,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('homesocios', absolute: false));
+        return redirect(route('homepersonas', absolute: false));
     }
 }

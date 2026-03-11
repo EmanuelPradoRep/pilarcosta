@@ -20,7 +20,7 @@ return new class extends Migration
     $table->decimal('monto', 10, 2);
     $table->date('fecha');
     $table->text('observaciones')->nullable();
-    $table->string('usuario');
+    $table->string('usuario')->nullable();
     $table->timestamps();
 
     // Foreign keys

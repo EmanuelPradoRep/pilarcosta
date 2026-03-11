@@ -3,13 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory; 
-use App\Models\Actividades;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class IngresosActividades extends Model
+
+class MovimientosContables extends Model
 {
-
       use HasFactory;
       protected $table = 'ingresos';
 
@@ -21,14 +20,5 @@ class IngresosActividades extends Model
         'fecha',
         'observaciones',
     ];
-
-
-
-       public function actividad()
-    {
-        return $this->belongsTo(Actividades::class, 'actividad_id');
-    }
-
-
-
+        
 }

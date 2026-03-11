@@ -369,7 +369,7 @@ return [
 
                 [
                     'text' => 'Actividad del alumno',
-                    'url' => '/actividadesalumno',
+                    'url' => '/actividadespanel',
                 ],
        ] 
        ],

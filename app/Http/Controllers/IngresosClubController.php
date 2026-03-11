@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\IngresosActividades;
-use App\Models\ActividadesSocios;
+use App\Models\MovimientosContables;
 use App\Models\Actividades;
 use Illuminate\Http\Request;
 
@@ -14,11 +13,11 @@ class IngresosClubController extends Controller
      */
     public function index()
 {
-    $ingreso = IngresosActividades::paginate(10);
+    $ingreso = MovimientosContables::paginate(10);
 
     // Totales separados
-    $totalIngresos = IngresosActividades::where('tipo', 'ingreso')->sum('monto');
-    $totalEgresos  = IngresosActividades::where('tipo', 'egreso')->sum('monto');
+    $totalIngresos = MovimientosContables::where('tipo', 'ingreso')->sum('monto');
+    $totalEgresos  = MovimientosContables::where('tipo', 'egreso')->sum('monto');
 
     // Balance final
     $balance = $totalIngresos - $totalEgresos;
@@ -44,11 +43,8 @@ class IngresosClubController extends Controller
        // Tomar todos los datos del formulario
     $data = $request->all();
 
+    MovimientosContables::create($data);
 
-    // Crear el registro en la base de datos
-    IngresosActividades::create($data);
-
-    // Redirigir con mensaje de éxito
     return redirect()
         ->route('ingresos.index')
         ->with([
