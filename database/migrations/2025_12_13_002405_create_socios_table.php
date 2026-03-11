@@ -25,7 +25,7 @@ return new class extends Migration
             $table->dateTime('fecha_nacimiento')->nullable();
             $table->boolean('activo')->default(false);
             $table->text('observaciones')->nullable();
-            $table->string('usuario');
+            $table->string('usuario')->nullable();
             $table->timestamps();
 
             $table->foreign('usuario_id')
