@@ -321,21 +321,29 @@ return [
             'can' => 'manage-blog',
         ],
        
-        ['header' => 'account_settings'],
-
-           [
-            'text' => 'Personas',
-            'icon' => 'fas fa-users',
-           
-        ],
-
-        
-
         [
-            'text' => 'Socios',
-            'url' => '/socios',
-            'icon' => 'fas fa-handshake',
-        ],
+            'header' => 'account_settings'],
+
+      [
+
+        'text' => 'Personas',
+        'url'  => '/personas',
+        'icon' => 'fas fa-users',
+        'submenu' => [
+        [
+                'text' => 'Socios',
+                'url'  => '/socios',
+                'icon' => 'fas fa-handshake',
+            ],
+            [
+                'text' => 'Participantes',
+                'url'  => '/personas',
+                'icon' => 'fas fa-user-graduate',
+            ],
+          ],
+         ],
+
+
 
         [
             'text' => 'Ingresos',
