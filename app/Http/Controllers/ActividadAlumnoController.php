@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 use App\Models\ActividadAlumno;
 use App\Models\Personas;
+use App\Models\Actividades;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,9 +16,10 @@ class ActividadAlumnoController extends Controller
    public function index()
     {
         $usuarioId = Auth::id();
+        $actividadestotales = Actividades::All();
         $actividades = ActividadAlumno::where('persona_id', $usuarioId)->paginate(10);
 
-        return view('homepersonas', compact('actividades'));
+        return view('homepersonas', compact('actividades', 'actividadestotales'));
     }
 
 
