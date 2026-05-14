@@ -10,6 +10,7 @@ use App\Http\Controllers\IngresosClubController;
 use App\Http\Controllers\ActividadesSociosController;
 use App\Http\Controllers\ActividadDocenteController;
 use App\Http\Controllers\ActividadAlumnoController;
+use App\Http\Controllers\PersonasController;
 
 
 /*Peticiones sin loguearse*/
@@ -39,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/socios', SociosController::class);
+    Route::resource('/personas', PersonasController::class);
     Route::resource('/actividades', ActividadesController::class);
     Route::resource('/ingresos', IngresosClubController::class);
     Route::resource('/actividadesdocente', ActividadDocenteController::class);
