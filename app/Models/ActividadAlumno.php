@@ -20,6 +20,11 @@ class ActividadAlumno extends Model
            return $this->belongsTo(Actividades::class, 'actividad_id');
          }
 
+              public function persona()
+        {
+            return $this->belongsTo(Personas::class, 'persona_id');
+        }
+
 
 
 }

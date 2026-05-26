@@ -24,13 +24,11 @@
                 <tbody>
                     @forelse($actividades as $actividad)
                         <tr>
-                            <td>{{ $actividad->id }}</td>
-                            <td>{{ $actividad->nombre }}</td>
-                            <td>{{ $actividad->fecha }}</td>
-                            <td>{{ $actividad->descripcion }}</td>
-                            <td>
-                               
-                                
+                        <td>{{ $actividad->id }}</td>
+                        <td>{{ $actividad->actividad ? $actividad->actividad->nombre : '—' }}</td>
+                        <td>{{ $actividad->persona ? $actividad->persona->nombre . ' ' . $actividad->persona->apellido : '—' }}</td>
+                        <td>{{ $actividad->usuario }}</td>
+                        <td>     
                             </td>
                         </tr>
                     @empty

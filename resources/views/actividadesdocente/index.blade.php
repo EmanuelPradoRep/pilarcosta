@@ -35,14 +35,17 @@
                     <tr>
                         <td>{{ $ad->id }}</td>
                         <td>{{ $ad->actividad ? $ad->actividad->nombre : '—' }}</td>
-                        <td>{{ $ad->docente ? $ad->docente->nombre . ' ' . $ad->docente->apellido : '—' }}</td>
+                        <td>{{ $ad->persona ? $ad->persona->nombre . ' ' . $ad->persona->apellido : '—' }}</td>
                         <td>{{ $ad->rol }}</td>
-                        <td>
-                          
-                            </form>
+                          <td>
+                            <a href="{{ route('actividadesalumno.index', $ad->actividad_id) }}" 
+                            class="btn btn-primary btn-sm">
+                                Ver Alumnos
+                            </a>
                         </td>
                     </tr>
                 @endforeach
+
             </tbody>
         </table>
 

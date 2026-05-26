@@ -13,6 +13,7 @@ class ActividadDocente extends Model
         'persona_id',
         'actividad_id',
         'usuario',
+        'es_docente',
           
     ];
 
@@ -22,6 +23,11 @@ class ActividadDocente extends Model
     public function actividad()
     {
         return $this->belongsTo(Actividades::class, 'actividad_id');
+    }
+
+    public function persona()
+    {
+        return $this->belongsTo(Personas::class, 'persona_id');
     }
 
   

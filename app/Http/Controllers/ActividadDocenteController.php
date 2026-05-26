@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\ActividadDocente;
+use App\Models\Personas;
 use Illuminate\Http\Request;
 
 class ActividadDocenteController extends Controller
@@ -9,11 +10,16 @@ class ActividadDocenteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+ public function index()
+
     {
-        $actividadesdocentes = ActividadDocente::with(['actividad','docente'])->paginate(10);
+        $actividadesdocentes = ActividadDocente::with(['actividad','persona'])
+            ->where('es_docente', true)
+            ->paginate(10);
+
         return view('actividadesdocente.index', compact('actividadesdocentes'));
     }
+
 
     /**
      * Show the form for creating a new resource.
