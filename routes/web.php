@@ -44,10 +44,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('/actividades', ActividadesController::class);
     Route::resource('/ingresos', IngresosClubController::class);
     Route::resource('/actividadesdocente', ActividadDocenteController::class);
+    Route::get('/listadoalumnoscurso/{actividad}', [ActividadAlumnoController::class, 'listadoalumnoscurso']) ->name('actividadesdocente.listadoalumnoscurso');
     Route::resource('/actividadesalumno', ActividadAlumnoController::class);
     Route::get('/actividadespanel', [ActividadAlumnoController::class, 'adminIndex'])->name('actividadespanel');
    
-
+    
 });
 
 

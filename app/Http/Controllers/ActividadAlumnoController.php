@@ -30,6 +30,16 @@ class ActividadAlumnoController extends Controller
 
     }
 
+    public function listadoalumnoscurso($actividad_id)
+    {
+        $actividades = ActividadAlumno::with('persona', 'actividad')
+            ->where('actividad_id', $actividad_id)
+            ->paginate(20);
+
+        return view('actividadesdocente.listadoalumnoscurso', compact('actividades'));
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

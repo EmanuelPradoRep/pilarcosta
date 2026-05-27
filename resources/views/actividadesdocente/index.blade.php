@@ -38,10 +38,11 @@
                         <td>{{ $ad->persona ? $ad->persona->nombre . ' ' . $ad->persona->apellido : '—' }}</td>
                         <td>{{ $ad->rol }}</td>
                           <td>
-                            <a href="{{ route('actividadesalumno.index', $ad->actividad_id) }}" 
-                            class="btn btn-primary btn-sm">
-                                Ver Alumnos
+                            <a href="{{ route('actividadesdocente.listadoalumnoscurso', $ad->actividad_id) }}">
+                                Ver alumnos
                             </a>
+
+
                         </td>
                     </tr>
                 @endforeach
